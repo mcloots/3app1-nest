@@ -23,7 +23,7 @@ export class GamesService {
     await this.gamesRepository.delete(id);
   }
 
-  async create(game: CreateGameDto) {
-     return await this.gamesRepository.insert(game);
+  async create(game: CreateGameDto) : Promise<Game> {
+     return await this.gamesRepository.save(game);
   }
 }
